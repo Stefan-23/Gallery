@@ -6,6 +6,14 @@
                         <h1 class="page-header">
                             Admin Page
                             <small>Subheading</small>
+                            <?php 
+
+                                if($database->connectDB()){
+                                    echo "Ejaah";
+                                }
+                            
+                            
+                            ?>
                         </h1>
                         <ol class="breadcrumb">
                             <li>
