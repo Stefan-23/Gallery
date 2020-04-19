@@ -3,27 +3,31 @@
     class User{
 
 
-        public static function find_users(){
+        public static function findUsers(){
 
-            global $database;
-
-            $result_set = $database->query("SELECT * FROM users");
-
-            return $result_set;
-
+         return self::findByQuery("SELECT * FROM users");
 
         }
+
+
         public static function findUsersById($id){
 
-            global $database;
-
-            $result= $database->query("SELECT * FROM users WHERE id=$id");
+            
+            $result = self::findByQuery("SELECT * FROM users WHERE id = $id LIMIT 1");
             
             $found= mysqli_fetch_array($result);
 
 
 
             return $found;
+        }
+
+        public static function findByQuery($sql){
+            global $database;
+            
+            $result = $database->query($sql);
+
+            return $result;
         }
 
         

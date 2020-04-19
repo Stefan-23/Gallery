@@ -9,15 +9,6 @@
                             <?php 
                             echo "<br>";
                                
-                            
-                               $result_set = User::find_users();
-
-                               while($row = mysqli_fetch_array($result_set)){
-                                   
-                                    echo "Username: " . $row['username'] . "<br>";
-                                    echo  "Password: ". $row['password'] . "<br>";
-                               
-                                }
 
                                 $resultId = User::findUsersById(1);
 
